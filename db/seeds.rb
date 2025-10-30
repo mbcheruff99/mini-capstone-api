@@ -7,3 +7,20 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+product = Product.create(
+  name: "notebook"
+  price: 1.5
+  description: "2 subject purple spiral notebook, college ruled"
+)
+
+i = 1
+5.times do
+  Product.create(
+    name: "Product #{i}"
+    price: 2 + i
+    image_url: "image#{i}.jpeg"
+    description: "product ##{i}is a good product"
+    i += 1
+  )
+end
