@@ -11,7 +11,7 @@
 product = Product.create(
   name: "notebook",
   price: 1.5,
-  description: "2 subject purple spiral notebook, college ruled"
+  description: "A subject purple spiral notebook, college ruled"
 )
 
 i = 1

@@ -15,4 +15,6 @@ Rails.application.routes.draw do
 
   get "/all-products" => "products#all_products"
 
+  get "/products/:id" => "products#show"
+
 end
