@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   get "/product1" => "products#product1"
 
-  get "/all-products" => "products#all_products"
+  get "/products" => "products#index"
 
   get "/products/:id" => "products#show"
 
