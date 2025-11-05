@@ -1,18 +1,39 @@
 class ProductsController < ApplicationController
 
-  def product1
-    @product = Product.first
-    render template: "products/show"
-  end
-
   def index
     @products = Product.all
-    render template: "products/index"
+    render :index
   end
 
   def show
-    @product = Product.find(params["id"])
-    render template: "products/show"
+    @product = Product.find(params[:id])
+    render :show
   end
   
+  def create
+    @product = Product.create(
+      name: params[:name],
+      price: params[:price],
+      description: params[:description])
+
+      render :show
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    @product.update(
+    name: params[:name] || @product.name,
+    price: params[:price] || @product.price,
+    description: params[:description] || @product.description
+    )
+    render :show
+  end
+
+  def destroy
+    @product = Product.find(params[:id])
+    @product.destroy
+    
+    render json: {message: "Product Successfully Deleted"}
+  end
+
 end
