@@ -15,3 +15,5 @@ json.total product.total
 json.friendly_created_at product.friendly_created_at
 
 json.friendly_updated_at product.friendly_updated_at
+
+json.inventory product.inventory

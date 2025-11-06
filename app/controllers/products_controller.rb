@@ -14,7 +14,9 @@ class ProductsController < ApplicationController
     @product = Product.create(
       name: params[:name],
       price: params[:price],
-      description: params[:description])
+      description: params[:description],
+      inventory: params[:inventory]
+    )
 
       render :show
   end
@@ -24,7 +26,8 @@ class ProductsController < ApplicationController
     @product.update(
     name: params[:name] || @product.name,
     price: params[:price] || @product.price,
-    description: params[:description] || @product.description
+    description: params[:description] || @product.description,
+    inventory: params[:inventory] || @product.inventory
     )
     render :show
   end
@@ -35,5 +38,7 @@ class ProductsController < ApplicationController
     
     render json: {message: "Product Successfully Deleted"}
   end
+
+
 
 end
