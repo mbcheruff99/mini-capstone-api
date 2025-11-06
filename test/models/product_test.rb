@@ -24,7 +24,7 @@ class ProductTest < ActiveSupport::TestCase
 
   test "friendly_created_at" do
     product = Product.new(created_at: "2025-10-31 01:04:39.727872000 +0000")
-    assert_equal "Oct 30, 09:04 pm, 2025", product.friendly_created_at #????
+    assert_equal "Oct 30, 09:04 pm, 2025", product.friendly_created_at 
   end
   
   test "friendly_updated_at" do
