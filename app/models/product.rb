@@ -1,5 +1,26 @@
 class Product < ApplicationRecord
 
+  validates :name, presence: true
+  validates :price, numericality: {greater_than: 0 }
+
+  #forbidden words custom method
+
+    FORBIDDEN_WORDS = ["stuff", "bomb"]
+    validate :description_cannot_contain_forbidden_words 
+    private
+    def description_cannot_contain_forbidden_words
+      return if description.blank?
+
+      FORBIDDEN_WORDS.each do |word|
+        if description.downcase.include?(word)
+          errors.add(:description, "contains a forbiden word: '#{word}'")
+        end
+      end
+    end
+
+
+  # end custom method
+
   def description_list
     description.split(", ")
   end
