@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
 
-  validates :name, presence: {message: "cannot be blank"}
-  validates :inventory, numericality: {message: "must be a number"}
-  validates :price, numericality: {greater_than: 0, message: "must be a positive number"}
+  validates :name, presence: {message: "Product name cannot be blank"}
+  validates :inventory, numericality: {message: "Product inventory must be a number"}
+  validates :price, numericality: {greater_than: 0, message: "Product price must be a positive number"}
 
   validate :description_cannot_contain_forbidden_words
 
