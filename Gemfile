@@ -1,9 +1,12 @@
 source "https://rubygems.org"
 
-# My added gems
-gem "http"
+# My added gems!!!!
 
+# Generate fake data
 gem "faker"
+
+# Populate the seeds folder
+gem "seed_dump"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 8.0.3"
