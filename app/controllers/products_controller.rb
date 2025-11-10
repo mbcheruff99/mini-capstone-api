@@ -32,7 +32,11 @@ class ProductsController < ApplicationController
     description: params[:description] || @product.description,
     inventory: params[:inventory] || @product.inventory
     )
-    render :show
+    if @product.valid?
+     render :show
+    else
+      render json: { errors: @product.errors }, status: :unprocessable_entity
+    end
   end
 
   def destroy

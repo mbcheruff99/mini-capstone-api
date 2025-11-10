@@ -1,8 +1,8 @@
 class Product < ApplicationRecord
 
   validates :name, presence: {message: "Product name cannot be blank"}
+  validates :price, numericality: {greater_than: 0, message: "Product must be a positive number"}
   validates :inventory, numericality: {message: "Product inventory must be a number"}
-  validates :price, numericality: {greater_than: 0, message: "Product price must be a positive number"}
 
   validate :description_cannot_contain_forbidden_words
 
@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   def description_list
     if description.present?
       description.split(", ")
-    else
+    else 
       nil
     end
   end

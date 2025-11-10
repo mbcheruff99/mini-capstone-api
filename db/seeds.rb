@@ -11,6 +11,8 @@
 10.times do
   product = Product.create(
     name: Faker::Tea.variety,
-    price: 12,
-    description: Faker::Tea.type)
+    price: 12.90,
+    description: Faker::Tea.type,
+    inventory: 200
+  )
 end
