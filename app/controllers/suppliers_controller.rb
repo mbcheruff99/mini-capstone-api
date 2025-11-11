@@ -5,5 +5,10 @@ class SuppliersController < ApplicationController
     render :index
   end
 
-  
+  # def show
+  #   @supplier = Product.find(params[:id])
+  #   render :show
+  # end
+
+
 end

@@ -1,6 +1,6 @@
 class Product < ApplicationRecord
   
-  belongs_to :supplier
+  belongs_to :supplier 
 
 
   validates :name, presence: {message: "Product name cannot be blank"}
