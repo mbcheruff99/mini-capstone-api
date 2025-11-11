@@ -14,6 +14,8 @@ Rails.application.routes.draw do
 
   get "/products" => "products#index"
 
+  get"/suppliers" => "suppliers#index"
+
   get "/products/:id" => "products#show"
 
   post "/products" => "products#create"
