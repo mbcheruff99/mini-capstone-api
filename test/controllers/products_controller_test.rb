@@ -35,7 +35,7 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "update" do
-    product = Product.last
+    product = Product.first
     put "/products/#{product.id}.json", params: {name: "test"}
     assert_response 200
     

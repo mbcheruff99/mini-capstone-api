@@ -8,11 +8,18 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Product.destroy_all
+
 10.times do
   product = Product.create(
     name: Faker::Tea.variety,
     price: 12.90,
     description: Faker::Tea.type,
-    inventory: 200
+    inventory: 200,
+    supplier_id: 1
   )
 end
+
+Supplier.create(
+  name: "Bob"
+)
