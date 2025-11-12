@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       description: params[:description],
       inventory: params[:inventory],
-      # supplier_id: params[:supplier_id]
+      supplier_id: params[:supplier_id]
     )
       if @product.save
       render :show, status: :created
@@ -32,8 +32,8 @@ class ProductsController < ApplicationController
     price: params[:price] || @product.price,
     description: params[:description] || @product.description,
     inventory: params[:inventory] || @product.inventory,
-    # supplier_id: params[supplier_id:] || @product.supplier_id
-    # )
+    supplier_id: params[:supplier_id] || @product.supplier_id
+    )
     if @product.valid?
      render :show
     else

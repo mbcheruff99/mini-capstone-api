@@ -19,3 +19,5 @@ json.friendly_updated_at product.friendly_updated_at
 json.inventory product.inventory
 
 json.supplier_id product.supplier_id
+
+json.supplier product.supplier
