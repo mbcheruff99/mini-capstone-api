@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
   
-  belongs_to :supplier 
-
+  # belongs_to :supplier 
+  def supplier
+    Supplier.find_by(id: supplier_id)
+  end
 
   validates :name, presence: {message: "Product name cannot be blank"}
   validates :price, numericality: {greater_than: 0, message: "Product must be a positive number"}

@@ -9,6 +9,9 @@
 #   end
 
 Product.destroy_all
+Supplier.destroy_all
+
+supplier = Supplier.create(name: "Bob")
 
 10.times do
   product = Product.create(
@@ -16,10 +19,20 @@ Product.destroy_all
     price: 12.90,
     description: Faker::Tea.type,
     inventory: 200,
-    supplier_id: 1
+    supplier_id: supplier.id
   )
 end
 
-Supplier.create(
-  name: "Bob"
-)
+supplier = Supplier.create(name: "Evan")
+
+10.times do
+  product = Product.create(
+    name: Faker::Tea.variety,
+    price: 15.90,
+    description: Faker::Tea.type,
+    inventory: 150,
+    supplier_id: supplier.id
+  )
+end
+
+
